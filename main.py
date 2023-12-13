@@ -1,7 +1,7 @@
 from controleSQL import ControleSQL
 from menus import Menus
 
-# Configuração do banco de dados
+
 DB_CONFIG = {
     "database": "trabalhoBD",
     "user": "postgres",
@@ -10,7 +10,7 @@ DB_CONFIG = {
     "port": "5432",
 }
 
-# Inicialização do controle SQL
+
 controle_sql = ControleSQL(**DB_CONFIG)
 
 while True:

@@ -5,36 +5,37 @@ class Menus:
     @staticmethod
     def cadastrar_cliente():
         os.system("cls")
-        codigo = input("Digite o código do cliente: ")
-        nome = input("Digite o nome do cliente: ")
-        telefone = input("Digite o telefone do cliente: ")
+        print("\n------------ CADASTRAR CLIENTE ------------")
+        codigo = input("Código do cliente: ")
+        nome = input("Nome do cliente: ")
+        telefone = input("Telefone do cliente: ")
         return codigo, nome, telefone
 
     @staticmethod
     def cadastrar_produto():
         os.system("cls")
-        codigo = input("Digite o código do produto: ")
-        nome = input("Digite o nome do produto: ")
-        valor = float(input("Digite o valor do produto: "))
-        quantidade_estoque = int(input("Digite a quantidade em estoque do produto: "))
+        print("\n------------ CADASTRAR PRODUTO ------------")
+        codigo = input("Código do produto: ")
+        nome = input("Nome do produto: ")
+        valor = float(input("Valor do produto: "))
+        quantidade_estoque = int(input("Quantidade em estoque: "))
         return codigo, nome, valor, quantidade_estoque
 
     @staticmethod
     def cadastrar_venda():
         os.system("cls")
-        cliente_codigo = input("Digite o código do cliente: ")
-        total = float(input("Digite o total da venda: "))
-        forma_pagamento = input("Digite a forma de pagamento: ")
+        print("\n------------ CADASTRAR VENDA ------------")
+        cliente_codigo = input("Código do cliente: ")
+        total = float(input("Total da venda: "))
+        forma_pagamento = input("Forma de pagamento: ")
 
         itens_venda = []
         while True:
-            produto_codigo = input(
-                "Digite o código do produto (ou '0' para encerrar): "
-            )
+            produto_codigo = input("Código do produto (ou '0' para encerrar): ")
             if produto_codigo == "0":
                 break
-            quantidade = int(input("Digite a quantidade: "))
-            subtotal = float(input("Digite o subtotal: "))
+            quantidade = int(input("Quantidade: "))
+            subtotal = float(input("Subtotal: "))
             itens_venda.append((produto_codigo, quantidade, subtotal))
 
         return cliente_codigo, total, forma_pagamento, itens_venda
@@ -42,18 +43,21 @@ class Menus:
     @staticmethod
     def atualizar_estoque():
         os.system("cls")
-        produto_codigo = input("Digite o código do produto: ")
-        quantidade_vendida = int(input("Digite a quantidade vendida: "))
+        print("\n------------ ATUALIZAR ESTOQUE ------------")
+        produto_codigo = input("Código do produto: ")
+        quantidade_vendida = int(input("Quantidade vendida: "))
         return produto_codigo, quantidade_vendida
 
     @staticmethod
     def obter_informacoes_cliente():
-        codigo = input("Digite o código do cliente: ")
+        os.system("cls")
+        print("\n------------ INFORMAÇÕES DO CLIENTE ------------")
+        codigo = input("Código do cliente: ")
         return codigo
 
     @staticmethod
     def exibir_menu_principal():
-        print("------------ MENU ------------")
+        print("------------ MENU PRINCIPAL ------------")
         print("1. Cadastrar Cliente")
         print("2. Cadastrar Produto")
         print("3. Cadastrar Venda")
@@ -61,16 +65,15 @@ class Menus:
         print("5. Informações do Cliente")
         print("6. Relatórios")
         print("\n0. Sair")
-        print("-------------------------------")
+        print("-----------------------------------------")
         return input("\nEscolha uma opção: ")
 
     @staticmethod
     def exibir_menu_relatorios():
-        os.system("cls")
-        print("------------ RELATÓRIOS ------------")
+        print("\n------------ MENU RELATÓRIOS ------------")
         print("1. Todos os clientes cadastrados")
         print("2. Total de vendas do empreendimento")
         print("3. Total de vendas por cliente")
         print("\n0. Voltar")
-        print("-------------------------------------")
+        print("------------------------------------------")
         return input("\nEscolha uma opção: ")
